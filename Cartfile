@@ -1,0 +1,3 @@
+github "hkellaway/Gloss"
+github "uport-project/SwiftKeccak"
+github "attaswift/BigInt" ~> 3.0
