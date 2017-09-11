@@ -40,14 +40,8 @@ struct IOParameter: Glossy {
     }
 }
 
-func truncateAndPad(bn: BigNumber) -> String {
-    let hexStr = bn.hexString
-    let startIndex = hexStr?.index((hexStr?.startIndex)!, offsetBy: 2)
-    let truncated = hexStr?.substring(from: startIndex!)
-    return (truncated?.leftPad(toWidth: 64))!
-}
 
-struct Function: Glossy {
+struct Method: Glossy {
     
     let anonymous: Bool?
     let constant: Bool?
@@ -88,35 +82,6 @@ struct Function: Glossy {
             ])
     }
     
-    func rawEncode(parameterTypes:Array<IOParameter>, parameters:Array<String>) -> String
-    {
-        return parameterSignature(values: parameters)!
-        
-    }
-    
-    func methodID(name:String,parameterTypes:Array<IOParameter>) -> String
-    {
-        var i=0
-        var pack = ""
-        for parameterType in parameterTypes {
-            if i==0 {
-                pack = parameterType.type
-            }
-            else
-            {
-                pack = pack+","+parameterType.type
-            }
-            i = i+1
-        }
-        
-        let signature = name+"("+pack+")"
-        let signatureHash = (signature.data(using: String.Encoding.utf8)!.keccak()).hexEncodedString()
-        let indx = signatureHash.index(signatureHash.startIndex, offsetBy: 8)
-        let methodSignature = signatureHash.substring(to:indx)
-        
-        return methodSignature
-    }
-    
     func encode(values: Array<String>) -> String? {
         
         var i=0
@@ -147,6 +112,8 @@ struct Function: Glossy {
             
             print("input:",input)
             print("value:", values[i])
+            
+           
             
             let matched = matches(for: "^((u?int|bytes)([0-9]*)|(address|bool|string)|([([0-9]*)]))", in: input.type)
             
@@ -187,9 +154,8 @@ struct Function: Glossy {
                     print("string:",values[i])
                     
                     
-                    let utf8 = String(values[i].utf8)
+                    // let utf8 = String(values[i].utf8)
                     
-                    print("utf8:",utf8)
                     /* enc(X) = enc(enc_utf8(X)), i.e. X is utf-8 encoded and this value is interpreted as of bytes type and encoded further. Note that the length used in this subsequent encoding is the number of bytes of the utf-8 encoded string, not its number of characters. */
                     
                     let str = values[i]
@@ -258,149 +224,4 @@ struct Function: Glossy {
     }
 }
 
-func matches(for regex: String, in text: String) -> [String] {
-    
-    do {
-        let regex = try NSRegularExpression(pattern: regex)
-        let nsString = text as NSString
-        let results = regex.matches(in: text, range: NSRange(location: 0, length: nsString.length))
-        return results.map { nsString.substring(with: $0.range)}
-    } catch let error {
-        print("invalid regex: \(error.localizedDescription)")
-        return []
-    }
-}
 
-
-let defaultPaddingString = "0"
-let defaultPaddingByte = 0 as UInt8
-
-
-public extension String {
-    
-    func decodeABI() ->  Array<String> {
-        // Split by 64 byte words, remove the 0x
-        let startIndex = self.index(self.startIndex, offsetBy: 2)
-        let endIndex = self.endIndex
-        let words = self[startIndex..<endIndex].split(64)
-        
-        var strings = [String]()
-        for word in words {
-            //print(word)
-            let hexString = BigNumber(hexString: "0x"+word).hexString
-            //print(bn?.hexString)
-            strings.append(hexString!)
-        }
-        
-        return strings
-    }
-    
-    func deHexPrefix() -> String {
-        let hexStr = self
-        let startIndex = hexStr.index((hexStr?.startIndex)!, offsetBy: 2)
-        let truncated = hexStr.substring(from: startIndex!)
-        return truncated
-    }
-
-    
-    public func leftPad(toWidth width: Int) -> String {
-        return leftPad(toWidth: width, withString: defaultPaddingString)
-    }
-    
-    public func leftPad(toWidth width: Int, withString string: String?) -> String {
-        let paddingString = string ?? defaultPaddingString
-        
-        if self.characters.count >= width {
-            return self
-        }
-        
-        let remainingLength: Int = width - self.characters.count
-        var padString = String()
-        for _ in 0 ..< remainingLength {
-            padString += paddingString
-        }
-        
-        return [padString, self].joined(separator: "")
-    }
-    
-    public func rightPad() -> String {
-        return rightPad(withString: defaultPaddingString)
-    }
-    
-    public func rightPad(withString string: String?) -> String {
-        
-        let paddingString = string ?? defaultPaddingString
-        
-        let len = self.characters.count
-        
-        let bn = BigNumber(integer: len)
-        
-        let lenStr = truncateAndPad(bn: bn!)
-        
-        print("rightPad", len)
-        
-        let add = len%32 == 0 ? 0: 32 - len%32
-        
-        var padString = String()
-        
-        for _ in 0 ..< add {
-            padString += paddingString
-        }
-        
-        return [lenStr, self, padString].joined(separator: "")
-    }
-    
-    public func rightPad32() -> String {
-        return rightPad32(withString: defaultPaddingString)
-    }
-    
-    public func rightPad32(withString string: String?) -> String {
-        
-        let paddingString = string ?? defaultPaddingString
-        
-        let len = self.characters.count
-        print("rightPad32", len)
-        let add = len%64 == 0 ? 0: 64 - len%64
-        var padString = String()
-        
-        for _ in 0 ..< add {
-            padString += paddingString
-        }
-        
-        return [self, padString].joined(separator: "")
-    }
-    
-    public func split( _ count: Int) -> [String] {
-        return stride(from: 0, to: self.characters.count, by: count).map { i -> String in
-            let startIndex = self.index(self.startIndex, offsetBy: i)
-            let endIndex   = self.index(startIndex, offsetBy: count, limitedBy: self.endIndex) ?? self.endIndex
-            return self[startIndex..<endIndex]
-        }
-    }
-    
-    public func hexaData() -> Data? {
-        var data = Data(capacity: characters.count / 2)
-        
-        let regex = try! NSRegularExpression(pattern: "[0-9a-f]{1,2}", options: .caseInsensitive)
-        regex.enumerateMatches(in: self, range: NSMakeRange(0, utf16.count)) { match, flags, stop in
-            let byteString = (self as NSString).substring(with: match!.range)
-            var num = UInt8(byteString, radix: 16)!
-            data.append(&num, count: 1)
-        }
-        
-        guard data.count > 0 else { return nil }
-        
-        return data
-    }
-}
-
-
-extension Data {
-    func hexEncodedString() -> String {
-        return map { String(format: "%02hhx", $0) }.joined()
-    }
-
-    var hexDescription: String {
-        return reduce("") {$0 + String(format: "%02x", $1)}
-    }
-}

@@ -1,22 +1,24 @@
 {
-  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "0B52CDF3A0EDE26CCFCCF3ECC8AFEA25B04B319E",
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "795497ED8484F4C60FB1DC654EE55ED853256669",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "795497ED8484F4C60FB1DC654EE55ED853256669" : 9223372036854775807,
+    "060C9FFF98C995A26E18345E99411EFD6265028F" : 9223372036854775807,
     "0B52CDF3A0EDE26CCFCCF3ECC8AFEA25B04B319E" : 9223372036854775807,
-    "D38E2BFA04524DAF8EC60C7E789E7D242306BFD5" : 9223372036854775807,
-    "060C9FFF98C995A26E18345E99411EFD6265028F" : 9223372036854775807
+    "D38E2BFA04524DAF8EC60C7E789E7D242306BFD5" : 9223372036854775807
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "48508161-FE3A-49D9-BCD5-D496851B396C",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "0B52CDF3A0EDE26CCFCCF3ECC8AFEA25B04B319E" : "mvn\/",
-    "D38E2BFA04524DAF8EC60C7E789E7D242306BFD5" : "mvn\/Claims\/ethers.objc\/",
-    "060C9FFF98C995A26E18345E99411EFD6265028F" : "mvn\/Claims\/"
+    "795497ED8484F4C60FB1DC654EE55ED853256669" : "ABIKit\/",
+    "060C9FFF98C995A26E18345E99411EFD6265028F" : "Claims\/",
+    "0B52CDF3A0EDE26CCFCCF3ECC8AFEA25B04B319E" : "",
+    "D38E2BFA04524DAF8EC60C7E789E7D242306BFD5" : "Claims\/ethers.objc\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "ABIKit",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
-  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "ABIKit\/ABIKit.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "ABIKit.xcodeproj",
   "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:provivus\/Claims.git",
@@ -27,6 +29,11 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:advatar\/hack.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "0B52CDF3A0EDE26CCFCCF3ECC8AFEA25B04B319E"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:provivus\/ABIKit.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "795497ED8484F4C60FB1DC654EE55ED853256669"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:provivus\/ethers.objc.git",

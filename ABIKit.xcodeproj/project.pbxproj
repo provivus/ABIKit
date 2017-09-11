@@ -7,12 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		042D5D951F646C12002F334E /* Gloss.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 04F63E811F645AD200BEEF08 /* Gloss.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		042D5D961F646C12002F334E /* SwiftKeccak.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 04F63E821F645AD200BEEF08 /* SwiftKeccak.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		042D5D971F646CA7002F334E /* contracts.json in CopyFiles */ = {isa = PBXBuildFile; fileRef = 04F63E851F645CF700BEEF08 /* contracts.json */; };
+		042D5D991F6504A5002F334E /* Method.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042D5D981F6504A5002F334E /* Method.swift */; };
+		042D5D9B1F6504D9002F334E /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042D5D9A1F6504D9002F334E /* Utilities.swift */; };
 		0452F4FF1F6462DA00D10C2F /* ethers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F63E8D1F64629600BEEF08 /* ethers.framework */; };
+		0452F5091F6465C900D10C2F /* Contract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0452F5081F6465C900D10C2F /* Contract.swift */; };
+		0452F50A1F646A4900D10C2F /* Gloss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F63E811F645AD200BEEF08 /* Gloss.framework */; };
+		0452F50B1F646A4900D10C2F /* SwiftKeccak.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F63E821F645AD200BEEF08 /* SwiftKeccak.framework */; };
 		04F63E6C1F6457BE00BEEF08 /* ABIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F63E621F6457BE00BEEF08 /* ABIKit.framework */; };
 		04F63E711F6457BE00BEEF08 /* ABIKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F63E701F6457BE00BEEF08 /* ABIKitTests.swift */; };
 		04F63E731F6457BE00BEEF08 /* ABIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 04F63E651F6457BE00BEEF08 /* ABIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		04F63E7D1F64580D00BEEF08 /* abi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F63E7C1F64580D00BEEF08 /* abi.swift */; };
-		04F63E7F1F64586100BEEF08 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 04F63E7E1F64586100BEEF08 /* Cartfile */; };
+		04F63E7D1F64580D00BEEF08 /* ABI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F63E7C1F64580D00BEEF08 /* ABI.swift */; };
 		04F63E831F645AD200BEEF08 /* Gloss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F63E811F645AD200BEEF08 /* Gloss.framework */; };
 		04F63E841F645AD200BEEF08 /* SwiftKeccak.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F63E821F645AD200BEEF08 /* SwiftKeccak.framework */; };
 		04F63E861F645CF700BEEF08 /* contracts.json in Resources */ = {isa = PBXBuildFile; fileRef = 04F63E851F645CF700BEEF08 /* contracts.json */; };
@@ -42,14 +49,32 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		042D5D941F646BF9002F334E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				042D5D971F646CA7002F334E /* contracts.json in CopyFiles */,
+				042D5D951F646C12002F334E /* Gloss.framework in CopyFiles */,
+				042D5D961F646C12002F334E /* SwiftKeccak.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		042D5D981F6504A5002F334E /* Method.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Method.swift; sourceTree = "<group>"; };
+		042D5D9A1F6504D9002F334E /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		0452F5081F6465C900D10C2F /* Contract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contract.swift; sourceTree = "<group>"; };
 		04F63E621F6457BE00BEEF08 /* ABIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ABIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		04F63E651F6457BE00BEEF08 /* ABIKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ABIKit.h; sourceTree = "<group>"; };
 		04F63E661F6457BE00BEEF08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04F63E6B1F6457BE00BEEF08 /* ABIKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ABIKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04F63E701F6457BE00BEEF08 /* ABIKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABIKitTests.swift; sourceTree = "<group>"; };
 		04F63E721F6457BE00BEEF08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		04F63E7C1F64580D00BEEF08 /* abi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = abi.swift; sourceTree = "<group>"; };
+		04F63E7C1F64580D00BEEF08 /* ABI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ABI.swift; sourceTree = "<group>"; };
 		04F63E7E1F64586100BEEF08 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		04F63E811F645AD200BEEF08 /* Gloss.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gloss.framework; path = Carthage/Build/iOS/Gloss.framework; sourceTree = "<group>"; };
 		04F63E821F645AD200BEEF08 /* SwiftKeccak.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftKeccak.framework; path = Carthage/Build/iOS/SwiftKeccak.framework; sourceTree = "<group>"; };
@@ -72,6 +97,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0452F50A1F646A4900D10C2F /* Gloss.framework in Frameworks */,
+				0452F50B1F646A4900D10C2F /* SwiftKeccak.framework in Frameworks */,
 				04F63E6C1F6457BE00BEEF08 /* ABIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -103,9 +130,12 @@
 		04F63E641F6457BE00BEEF08 /* ABIKit */ = {
 			isa = PBXGroup;
 			children = (
+				042D5D9A1F6504D9002F334E /* Utilities.swift */,
+				042D5D981F6504A5002F334E /* Method.swift */,
 				04F63E651F6457BE00BEEF08 /* ABIKit.h */,
 				04F63E661F6457BE00BEEF08 /* Info.plist */,
-				04F63E7C1F64580D00BEEF08 /* abi.swift */,
+				04F63E7C1F64580D00BEEF08 /* ABI.swift */,
+				0452F5081F6465C900D10C2F /* Contract.swift */,
 			);
 			path = ABIKit;
 			sourceTree = "<group>";
@@ -177,6 +207,7 @@
 				04F63E671F6457BE00BEEF08 /* Sources */,
 				04F63E681F6457BE00BEEF08 /* Frameworks */,
 				04F63E691F6457BE00BEEF08 /* Resources */,
+				042D5D941F646BF9002F334E /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -257,7 +288,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04F63E7F1F64586100BEEF08 /* Cartfile in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,7 +306,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04F63E7D1F64580D00BEEF08 /* abi.swift in Sources */,
+				04F63E7D1F64580D00BEEF08 /* ABI.swift in Sources */,
+				0452F5091F6465C900D10C2F /* Contract.swift in Sources */,
+				042D5D9B1F6504D9002F334E /* Utilities.swift in Sources */,
+				042D5D991F6504A5002F334E /* Method.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,6 +487,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = BH7Z7SE66T;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ABIKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = us.proviv.ABIKitTests;
@@ -467,6 +504,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = BH7Z7SE66T;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ABIKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = us.proviv.ABIKitTests;
