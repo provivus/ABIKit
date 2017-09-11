@@ -1,4 +1,2 @@
-github "attaswift/BigInt" "v3.0.0"
-github "attaswift/SipHash" "v1.2.0"
 github "hkellaway/Gloss" "1.2.4"
 github "uport-project/SwiftKeccak" "vr0.0.4"
