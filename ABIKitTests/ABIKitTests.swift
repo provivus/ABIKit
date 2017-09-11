@@ -78,6 +78,13 @@ class ABIKitTests: XCTestCase {
         let b = "fffffffffffff38dd0f10627f5529bdb2c52d4846810af0ac00000000000000"
         XCTAssertEqual(a,b)
     }
+    
+    func testNegativeInt256II() {
+        
+        let a = abi.rawEncode([ "int256" ], [ "-1" ])
+        let b = "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+        XCTAssertEqual(a,b)
+    }
 
     func testUint32() {
         
