@@ -12,16 +12,14 @@
 		042D5D971F646CA7002F334E /* contracts.json in CopyFiles */ = {isa = PBXBuildFile; fileRef = 04F63E851F645CF700BEEF08 /* contracts.json */; };
 		042D5D991F6504A5002F334E /* Method.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042D5D981F6504A5002F334E /* Method.swift */; };
 		042D5D9B1F6504D9002F334E /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042D5D9A1F6504D9002F334E /* Utilities.swift */; };
-		0452F4FF1F6462DA00D10C2F /* ethers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F63E8D1F64629600BEEF08 /* ethers.framework */; };
 		0452F5091F6465C900D10C2F /* Contract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0452F5081F6465C900D10C2F /* Contract.swift */; };
-		0452F50A1F646A4900D10C2F /* Gloss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F63E811F645AD200BEEF08 /* Gloss.framework */; };
-		0452F50B1F646A4900D10C2F /* SwiftKeccak.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F63E821F645AD200BEEF08 /* SwiftKeccak.framework */; };
-		04F63E6C1F6457BE00BEEF08 /* ABIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F63E621F6457BE00BEEF08 /* ABIKit.framework */; };
+		0489E28E1F671354000916CF /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 04F63E7E1F64586100BEEF08 /* Cartfile */; };
+		0489E2911F671379000916CF /* ABIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F63E621F6457BE00BEEF08 /* ABIKit.framework */; };
+		0489E2931F6713E9000916CF /* Gloss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F63E811F645AD200BEEF08 /* Gloss.framework */; };
+		0489E2941F6713E9000916CF /* SwiftKeccak.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F63E821F645AD200BEEF08 /* SwiftKeccak.framework */; };
 		04F63E711F6457BE00BEEF08 /* ABIKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F63E701F6457BE00BEEF08 /* ABIKitTests.swift */; };
 		04F63E731F6457BE00BEEF08 /* ABIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 04F63E651F6457BE00BEEF08 /* ABIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		04F63E7D1F64580D00BEEF08 /* ABI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F63E7C1F64580D00BEEF08 /* ABI.swift */; };
-		04F63E831F645AD200BEEF08 /* Gloss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F63E811F645AD200BEEF08 /* Gloss.framework */; };
-		04F63E841F645AD200BEEF08 /* SwiftKeccak.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F63E821F645AD200BEEF08 /* SwiftKeccak.framework */; };
 		04F63E861F645CF700BEEF08 /* contracts.json in Resources */ = {isa = PBXBuildFile; fileRef = 04F63E851F645CF700BEEF08 /* contracts.json */; };
 /* End PBXBuildFile section */
 
@@ -32,20 +30,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 04F63E611F6457BE00BEEF08;
 			remoteInfo = ABIKit;
-		};
-		04F63E8C1F64629600BEEF08 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 04F63E871F64629500BEEF08 /* ethers.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = E2317E631E3191AC00DBE3E4;
-			remoteInfo = ethers;
-		};
-		04F63E8E1F64629600BEEF08 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 04F63E871F64629500BEEF08 /* ethers.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = E2317E6C1E3191AC00DBE3E4;
-			remoteInfo = ethersTests;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -68,6 +52,10 @@
 		042D5D981F6504A5002F334E /* Method.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Method.swift; sourceTree = "<group>"; };
 		042D5D9A1F6504D9002F334E /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		0452F5081F6465C900D10C2F /* Contract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contract.swift; sourceTree = "<group>"; };
+		0489E2B21F6714D7000916CF /* ethers.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ethers.framework; path = "../../../Library/Developer/Xcode/DerivedData/Claims-coapuymjujisgggxthllacibanzt/Build/Products/Debug-iphonesimulator/ethers.framework"; sourceTree = "<group>"; };
+		0489E2B41F671587000916CF /* ethers.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ethers.framework; path = "../Claims/ethers.objc/build/Release-iphoneos/ethers.framework"; sourceTree = "<group>"; };
+		0489E2B61F67159E000916CF /* Gloss.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gloss.framework; path = ../Claims/Carthage/Build/iOS/Gloss.framework; sourceTree = "<group>"; };
+		0489E2B81F6715D1000916CF /* SwiftKeccak.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftKeccak.framework; path = ../Claims/Carthage/Build/iOS/SwiftKeccak.framework; sourceTree = "<group>"; };
 		04F63E621F6457BE00BEEF08 /* ABIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ABIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		04F63E651F6457BE00BEEF08 /* ABIKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ABIKit.h; sourceTree = "<group>"; };
 		04F63E661F6457BE00BEEF08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -79,7 +67,6 @@
 		04F63E811F645AD200BEEF08 /* Gloss.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gloss.framework; path = Carthage/Build/iOS/Gloss.framework; sourceTree = "<group>"; };
 		04F63E821F645AD200BEEF08 /* SwiftKeccak.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftKeccak.framework; path = Carthage/Build/iOS/SwiftKeccak.framework; sourceTree = "<group>"; };
 		04F63E851F645CF700BEEF08 /* contracts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = contracts.json; sourceTree = "<group>"; };
-		04F63E871F64629500BEEF08 /* ethers.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ethers.xcodeproj; path = ../Claims/ethers.objc/ethers.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,9 +74,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0452F4FF1F6462DA00D10C2F /* ethers.framework in Frameworks */,
-				04F63E831F645AD200BEEF08 /* Gloss.framework in Frameworks */,
-				04F63E841F645AD200BEEF08 /* SwiftKeccak.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,9 +81,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0452F50A1F646A4900D10C2F /* Gloss.framework in Frameworks */,
-				0452F50B1F646A4900D10C2F /* SwiftKeccak.framework in Frameworks */,
-				04F63E6C1F6457BE00BEEF08 /* ABIKit.framework in Frameworks */,
+				0489E2931F6713E9000916CF /* Gloss.framework in Frameworks */,
+				0489E2941F6713E9000916CF /* SwiftKeccak.framework in Frameworks */,
+				0489E2911F671379000916CF /* ABIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,7 +93,6 @@
 		04F63E581F6457BE00BEEF08 = {
 			isa = PBXGroup;
 			children = (
-				04F63E871F64629500BEEF08 /* ethers.xcodeproj */,
 				04F63E7E1F64586100BEEF08 /* Cartfile */,
 				04F63E641F6457BE00BEEF08 /* ABIKit */,
 				04F63E6F1F6457BE00BEEF08 /* ABIKitTests */,
@@ -153,19 +136,14 @@
 		04F63E801F645AD100BEEF08 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0489E2B81F6715D1000916CF /* SwiftKeccak.framework */,
+				0489E2B61F67159E000916CF /* Gloss.framework */,
+				0489E2B41F671587000916CF /* ethers.framework */,
+				0489E2B21F6714D7000916CF /* ethers.framework */,
 				04F63E811F645AD200BEEF08 /* Gloss.framework */,
 				04F63E821F645AD200BEEF08 /* SwiftKeccak.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		04F63E881F64629500BEEF08 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				04F63E8D1F64629600BEEF08 /* ethers.framework */,
-				04F63E8F1F64629600BEEF08 /* ethersTests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,12 +230,6 @@
 			mainGroup = 04F63E581F6457BE00BEEF08;
 			productRefGroup = 04F63E631F6457BE00BEEF08 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 04F63E881F64629500BEEF08 /* Products */;
-					ProjectRef = 04F63E871F64629500BEEF08 /* ethers.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				04F63E611F6457BE00BEEF08 /* ABIKit */,
@@ -265,23 +237,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		04F63E8D1F64629600BEEF08 /* ethers.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = ethers.framework;
-			remoteRef = 04F63E8C1F64629600BEEF08 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		04F63E8F1F64629600BEEF08 /* ethersTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = ethersTests.xctest;
-			remoteRef = 04F63E8E1F64629600BEEF08 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		04F63E601F6457BE00BEEF08 /* Resources */ = {
@@ -295,6 +250,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0489E28E1F671354000916CF /* Cartfile in Resources */,
 				04F63E861F645CF700BEEF08 /* contracts.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
