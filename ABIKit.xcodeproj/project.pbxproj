@@ -12,6 +12,7 @@
 		042D5D971F646CA7002F334E /* contracts.json in CopyFiles */ = {isa = PBXBuildFile; fileRef = 04F63E851F645CF700BEEF08 /* contracts.json */; };
 		042D5D991F6504A5002F334E /* Method.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042D5D981F6504A5002F334E /* Method.swift */; };
 		042D5D9B1F6504D9002F334E /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042D5D9A1F6504D9002F334E /* Utilities.swift */; };
+		0450B14F1F681813002A7D80 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 04F63E7E1F64586100BEEF08 /* Cartfile */; };
 		0452F5091F6465C900D10C2F /* Contract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0452F5081F6465C900D10C2F /* Contract.swift */; };
 		0489E28E1F671354000916CF /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 04F63E7E1F64586100BEEF08 /* Cartfile */; };
 		0489E2911F671379000916CF /* ABIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F63E621F6457BE00BEEF08 /* ABIKit.framework */; };
@@ -52,10 +53,6 @@
 		042D5D981F6504A5002F334E /* Method.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Method.swift; sourceTree = "<group>"; };
 		042D5D9A1F6504D9002F334E /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		0452F5081F6465C900D10C2F /* Contract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contract.swift; sourceTree = "<group>"; };
-		0489E2B21F6714D7000916CF /* ethers.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ethers.framework; path = "../../../Library/Developer/Xcode/DerivedData/Claims-coapuymjujisgggxthllacibanzt/Build/Products/Debug-iphonesimulator/ethers.framework"; sourceTree = "<group>"; };
-		0489E2B41F671587000916CF /* ethers.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ethers.framework; path = "../Claims/ethers.objc/build/Release-iphoneos/ethers.framework"; sourceTree = "<group>"; };
-		0489E2B61F67159E000916CF /* Gloss.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gloss.framework; path = ../Claims/Carthage/Build/iOS/Gloss.framework; sourceTree = "<group>"; };
-		0489E2B81F6715D1000916CF /* SwiftKeccak.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftKeccak.framework; path = ../Claims/Carthage/Build/iOS/SwiftKeccak.framework; sourceTree = "<group>"; };
 		04F63E621F6457BE00BEEF08 /* ABIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ABIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		04F63E651F6457BE00BEEF08 /* ABIKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ABIKit.h; sourceTree = "<group>"; };
 		04F63E661F6457BE00BEEF08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -136,10 +133,6 @@
 		04F63E801F645AD100BEEF08 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0489E2B81F6715D1000916CF /* SwiftKeccak.framework */,
-				0489E2B61F67159E000916CF /* Gloss.framework */,
-				0489E2B41F671587000916CF /* ethers.framework */,
-				0489E2B21F6714D7000916CF /* ethers.framework */,
 				04F63E811F645AD200BEEF08 /* Gloss.framework */,
 				04F63E821F645AD200BEEF08 /* SwiftKeccak.framework */,
 			);
@@ -243,6 +236,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0450B14F1F681813002A7D80 /* Cartfile in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,8 +398,9 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = ABIKit/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				INSTALL_PATH = "@rpath";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/iOS";
 				PRODUCT_BUNDLE_IDENTIFIER = us.proviv.ABIKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -429,8 +424,9 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = ABIKit/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				INSTALL_PATH = "@rpath";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/iOS";
 				PRODUCT_BUNDLE_IDENTIFIER = us.proviv.ABIKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

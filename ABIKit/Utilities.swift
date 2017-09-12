@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import ethers
+import EtherKit
 
 public func readJson(fileName:(String)) -> Data? {
     do {

@@ -8,7 +8,7 @@
 
 import Gloss
 import SwiftKeccak
-import ethers
+import EtherKit
 
 struct IOParameter: Glossy {
     

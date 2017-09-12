@@ -1,2 +1,3 @@
 github "hkellaway/Gloss"
 github "uport-project/SwiftKeccak"
+github "provivus/EtherKit" "master"

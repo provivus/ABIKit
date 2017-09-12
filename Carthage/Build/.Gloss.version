@@ -1,26 +1,26 @@
 {
   "iOS" : [
     {
-      "hash" : "041a37adca4691f877235a6a01d83a8fa2905dd94d3c640014e41a02e4158577",
+      "hash" : "4ba1258c46a12cda10650460e6c37c063db603028c223b91b81f7ab2fa6b8d49",
       "name" : "Gloss"
     }
   ],
   "commitish" : "1.2.4",
   "watchOS" : [
     {
-      "hash" : "e14ecd7ea7931253750fc401ec41cf04195221567fa43871df89a5f4d0901274",
+      "hash" : "99fd1b86e18fc580baf9e20086deef53c482f4cbbdc67e6ff0f9a414969830f0",
       "name" : "Gloss"
     }
   ],
   "tvOS" : [
     {
-      "hash" : "8c2066da6de10473b482861e406c9ae8748fced26179c43a99cec216498f6027",
+      "hash" : "9cca5fda9aa37c627c804ce1da0db90aa68bd7d78266e97e3065254678d0d0fc",
       "name" : "Gloss"
     }
   ],
   "Mac" : [
     {
-      "hash" : "98f3779941bb9e419a1067b286e1d16056f1a71116d02ac51f20ebc544ef35ef",
+      "hash" : "c749f18f4c03076a0edf4398002ffa33eb3ec8767c25f286ef8d2f47f43e09a2",
       "name" : "Gloss"
     }
   ]
