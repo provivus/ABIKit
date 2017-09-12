@@ -41,7 +41,7 @@ struct IOParameter: Glossy {
 }
 
 
-struct Method: Glossy {
+public struct Method: Glossy {
     
     let anonymous: Bool?
     let constant: Bool?
@@ -53,7 +53,7 @@ struct Method: Glossy {
     
     // MARK: - Deserialization
     
-    init?(json: JSON) {
+    public init?(json: JSON) {
         guard let type: String = "type"  <~~ json
             else {
                 print("Function failed")
@@ -70,7 +70,7 @@ struct Method: Glossy {
     
     // MARK: - Serialization
     
-    func toJSON() -> JSON? {
+    public func toJSON() -> JSON? {
         return jsonify([
             "constant" ~~> self.name,
             "inputs" ~~> self.inputs,

@@ -9,7 +9,7 @@
 
 import Gloss
 
-struct Contract: Glossy {
+public struct Contract: Glossy {
     
     let contractName: String
     let unlinkedBinary: String
@@ -19,7 +19,7 @@ struct Contract: Glossy {
     
     // MARK: - Deserialization
     
-    init?(json: JSON) {
+    public init?(json: JSON) {
         
         guard let contractName: String = "contract_name" <~~ json,
             let abi: [Method] = "abi" <~~ json,
@@ -39,7 +39,7 @@ struct Contract: Glossy {
     
     // MARK: - Serialization
     
-    func toJSON() -> JSON? {
+    public func toJSON() -> JSON? {
         return jsonify([
             "contract_name" ~~> self.contractName,
             "abi" ~~> self.abi,
