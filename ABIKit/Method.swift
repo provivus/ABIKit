@@ -101,6 +101,8 @@ public struct Method: Glossy {
         let signatureHash = (signature.data(using: String.Encoding.utf8)!.keccak()).hexEncodedString()
         let indx = signatureHash.index(signatureHash.startIndex, offsetBy: 8)
         let methodSignature = signatureHash.substring(to:indx)
+        
+        print("final encoding",  "0x"+methodSignature+parameterSignature(values: values)!)
         return "0x"+methodSignature+parameterSignature(values: values)!
     }
     
@@ -179,10 +181,12 @@ public struct Method: Glossy {
                 case "bytes":
                     
                     let hexString = values[i]
+                    
                     /*let str = values[i]
                      let data = str.data(using: .utf8)!
                      let hexString = data.map{ String(format:"%02x", $0) }.joined()
                      */
+                    
                     let startIndex = hexString.index((hexString.startIndex), offsetBy: 2)
                     let truncated = hexString.substring(from: startIndex)
                     
