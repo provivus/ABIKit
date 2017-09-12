@@ -70,7 +70,7 @@ struct ABI {
         let indx = signatureHash.index(signatureHash.startIndex, offsetBy: 8)
         let methodSignature = signatureHash.substring(to:indx)
     
-        return methodSignature
+        return methodSignature.lowercased()
     }
 
     public func encodeParam(type: String, value: String) -> String? {

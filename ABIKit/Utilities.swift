@@ -60,9 +60,8 @@ public extension String {
         
         var strings = [String]()
         for word in words {
-            //print(word)
+            print(word)
             let hexString = BigNumber(hexString: "0x"+word).hexString
-            //print(bn?.hexString)
             strings.append(hexString!)
         }
         
