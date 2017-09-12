@@ -49,7 +49,7 @@ public struct Contract: Glossy {
             ])
     }
     
-    func find(name: String) -> Method? {
+    public func find(name: String) -> Method? {
         for method in abi {
             if method.name == name {
                 return method
