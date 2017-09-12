@@ -12,7 +12,7 @@ import Gloss
 public struct Contract: Glossy {
     
     let contractName: String
-    let unlinkedBinary: String
+    public let unlinkedBinary: String
     let schemaVersion: String
     let updatedAt: Int
     let abi: [Method] // nested model
