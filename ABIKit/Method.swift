@@ -82,7 +82,7 @@ public struct Method: Glossy {
             ])
     }
     
-    func encode(values: Array<String>) -> String? {
+    public func encode(values: Array<String>) -> String? {
         
         var i=0
         var encoding = ""
