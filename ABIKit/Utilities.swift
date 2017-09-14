@@ -41,7 +41,7 @@ func truncateAndPad(bn: BigNumber) -> String {
     let hexStr = bn.hexString
     let startIndex = hexStr?.index((hexStr?.startIndex)!, offsetBy: 2)
     let truncated = hexStr?.substring(from: startIndex!)
-    return (truncated?.leftPad(toWidth: 64))!
+    return (truncated?.leftPad(toWidth: 64))!.lowercased()
 }
 
 
@@ -60,17 +60,14 @@ public extension String {
         
         var strings = [String]()
         for word in words {
-            print(word)
             let hexString = BigNumber(hexString: "0x"+word).hexString
             strings.append(hexString!)
         }
-        
         return strings
     }
     
     
      func deHexPrefix() -> String {
-        
         
         let index = self.index((self.startIndex), offsetBy: 2)
         let prefix = self.substring(to: index)
@@ -81,7 +78,6 @@ public extension String {
         } else {
             return self
         }
-        
      }
     
     
@@ -115,8 +111,6 @@ public extension String {
         
         let len = self.characters.count
         
-        print("rightPad", len)
-        
         let add = len%64 == 0 ? 0: 64 - len%64
         
         var padString = String()
@@ -137,7 +131,7 @@ public extension String {
         let paddingString = string ?? defaultPaddingString
         
         let len = self.characters.count
-        print("rightPad32", len)
+
         let add = len%64 == 0 ? 0: 64 - len%64
         var padString = String()
         

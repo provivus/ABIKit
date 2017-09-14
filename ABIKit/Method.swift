@@ -102,7 +102,7 @@ public struct Method: Glossy {
         let indx = signatureHash.index(signatureHash.startIndex, offsetBy: 8)
         let methodSignature = signatureHash.substring(to:indx)
         
-        print("final encoding",  "0x"+methodSignature+parameterSignature(values: values)!)
+        //print("final encoding",  "0x"+methodSignature+parameterSignature(values: values)!)
         return "0x"+methodSignature+parameterSignature(values: values)!
     }
     
@@ -111,11 +111,6 @@ public struct Method: Glossy {
         var i=0
         var parameterSignature = ""
         for input in inputs! {
-            
-            print("input:",input)
-            print("value:", values[i])
-            
-           
             
             let matched = matches(for: "^((u?int|bytes)([0-9]*)|(address|bool|string)|([([0-9]*)]))", in: input.type)
             
@@ -133,7 +128,6 @@ public struct Method: Glossy {
                         let bn2 = bn1?.add(BigNumber.constantOne())
                         bn = bn2!
                     }
-                    print("encoded:",truncateAndPad(bn: bn))
                     parameterSignature = parameterSignature + truncateAndPad(bn: bn)
                     break
                 case "uint","uint8","uint16","uint32","uint64","uint128","uint256": // Tested and working
@@ -141,20 +135,15 @@ public struct Method: Glossy {
                     if bn.isNegative { // This is an error
                         return nil
                     }
-                    print("encoded:",truncateAndPad(bn: bn))
                     parameterSignature = parameterSignature + truncateAndPad(bn: bn)
                     break
                 case "address": // Tested and working
                     // just left pad with zeros
                     bn = BigNumber(hexString: values[i])
-                    print("encoded:",truncateAndPad(bn: bn))
                     parameterSignature = parameterSignature + truncateAndPad(bn: bn)
                     break
                     
                 case "string":
-                    
-                    print("string:",values[i])
-                    
                     
                     // let utf8 = String(values[i].utf8)
                     
@@ -164,8 +153,6 @@ public struct Method: Glossy {
                     let data = str.data(using: .utf8)!
                     let hexString = data.map{ String(format:"%02x", $0) }.joined()
                     
-                    print("hexString:",hexString)
-                    
                     let startIndex = hexString.index((hexString.startIndex), offsetBy: 2)
                     let truncated = hexString.substring(from: startIndex)
                     
@@ -174,7 +161,6 @@ public struct Method: Glossy {
                      
                      enc(X) = enc(k) pad_right(X), i.e. the number of bytes is encoded as a uint256 followed by the actual value of X as a byte sequence, followed by the minimum number of zero-bytes such that len(enc(X)) is a multiple of 32.*/
                     
-                    print("encoded:", truncated.rightPad())
                     parameterSignature = parameterSignature + truncated.rightPad()
                     
                     break
@@ -195,8 +181,6 @@ public struct Method: Glossy {
                      
                      enc(X) = enc(k) pad_right(X), i.e. the number of bytes is encoded as a uint256 followed by the actual value of X as a byte sequence, followed by the minimum number of zero-bytes such that len(enc(X)) is a multiple of 32.*/
                     
-                    
-                    print("encoded:", truncated.rightPad())
                     parameterSignature = parameterSignature + truncated.rightPad()
                     break
                 case "bytes32":
@@ -214,10 +198,7 @@ public struct Method: Glossy {
                         hexString = str
                     }
                     
-                    print("encoded:",hexString.rightPad32())
-                    parameterSignature = parameterSignature + hexString.rightPad32()
-                    
-                    
+                    parameterSignature = parameterSignature + hexString.rightPad32()                    
                     break
                 default: break
                 }

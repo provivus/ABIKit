@@ -106,9 +106,6 @@ struct ABI {
             let data = str.data(using: .utf8)!
             let hexString = data.map{ String(format:"%02x", $0) }.joined()
             
-            print("hexString:",hexString)
-            
-            print("length", hexString.lengthOfBytes(using: .utf8),hexString.characters.count)
             let len = hexString.lengthOfBytes(using: .utf8)
             let bn = BigNumber(integer: len/2)
             let p = BigNumber(integer: 32)
@@ -149,9 +146,6 @@ struct ABI {
         var parameterSignature = ""
         for parameterType in parameterTypes {
        
-            print("input:",parameterType)
-            print("value:", parameterValues[i])
-
             let matched = matches(for: "^((u?int|bytes)([0-9]*)|(address|bool|string)|([([0-9]*)]))", in: parameterType)
             
             for match in matched {
