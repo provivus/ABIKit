@@ -11,44 +11,7 @@ import SwiftKeccak
 import EtherKit
 
 struct ABI {
-    /*
-    function coderNumber(size, signed) {
-        return {
-            encode: function encodeNumber(valueInput) {
-            var value = valueInput; // eslint-disable-line
-    
-            if (typeof value === 'object' && value.toString && (value.toTwos || value.dividedToIntegerBy)) {
-                value = value.toString(10).split('.')[0];
-            }
-    
-            if (typeof value === 'string' || typeof value === 'number') {
-                value = String(value).split('.')[0];
-            }
-    
-            value = numberToBN(value);
-            value = value.toTwos(size * 8).maskn(size * 8);
-    
-            if (signed) {
-                value = value.fromTwos(size * 8).toTwos(256);
-            }
-            return value.toArrayLike(Buffer, 'be', 32);
-        },
-            decode: function decodeNumber(data, offset) {
-                var junkLength = 32 - size; // eslint-disable-line
-                var value = new BN(data.slice(offset + junkLength, offset + 32)); // eslint-disable-line
-                if (signed) {
-                    value = value.fromTwos(size * 8);
-                } else {
-                    value = value.maskn(size * 8);
-                }
-            return {
-            consumed: 32,
-            value: new BN(value.toString(10))
-            };
-        }
-    };
-    */
-
+ 
     public func methodID(name:String, parameterTypes:Array<String>) -> String
     {
         var i=0

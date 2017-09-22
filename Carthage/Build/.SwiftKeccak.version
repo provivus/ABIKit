@@ -1,18 +1,9 @@
 {
+  "commitish" : "vr0.0.4",
   "iOS" : [
     {
-      "hash" : "b79c5ae895b24160949e50490fe5e409f5ac16b0d851baa56b637fae3bf64b6c",
+      "hash" : "7179bcf2d22256dc36422f1bca5bf2b78ec026bdea9ebdc96753a0eac6f68340",
       "name" : "SwiftKeccak"
     }
-  ],
-  "commitish" : "vr0.0.4",
-  "watchOS" : [
-
-  ],
-  "tvOS" : [
-
-  ],
-  "Mac" : [
-
   ]
 }

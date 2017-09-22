@@ -7,4 +7,5 @@ framework module SwiftKeccak {
 
 module SwiftKeccak.Swift {
     header "SwiftKeccak-Swift.h"
+    requires objc
 }

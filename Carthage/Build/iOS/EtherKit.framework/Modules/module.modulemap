@@ -4,3 +4,8 @@ framework module EtherKit {
   export *
   module * { export * }
 }
+
+module EtherKit.Swift {
+    header "EtherKit-Swift.h"
+    requires objc
+}
