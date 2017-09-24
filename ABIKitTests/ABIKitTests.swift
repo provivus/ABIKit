@@ -8,7 +8,7 @@
 
 import XCTest
 @testable import ABIKit
-import ethers
+import EtherKit
 
 //[[NSBundle bundleForClass:[self class]] resourcePath]
 
@@ -195,7 +195,15 @@ class ABIKitTests: XCTestCase {
         XCTAssertEqual(a,b)
     }
     */
+    func testManyBytes()
+    {
+    let a = abi.rawEncode([ "bytes" ], [ "0x731a3afc00d1b1e3461b955e53fc866dcf303b3eb9f4c16f89e388930f48134b" ])
+    let b = "0000000000000000000000000000000000000000000000000000000000000020" + "0000000000000000000000000000000000000000000000000000000000000020" + "731a3afc00d1b1e3461b955e53fc866dcf303b3eb9f4c16f89e388930f48134b"
+        
+        XCTAssertEqual(a,b)
+    }
     
+ 
     func test256BitsAsBytes() {
         
         let a = abi.rawEncode([ "bytes" ], [ "0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff" ])

@@ -41,16 +41,12 @@ struct ABI {
         switch type {
         case "int","int8","int16","int32","int64","int128","int256":
             var bn = BigNumber(decimalString: value)!
-            
-            
             if bn.isNegative {
                 let bn1 = bn.complement()
                 let bn2 = bn1?.add(BigNumber.constantOne())
                 bn = bn2!
                 //bn = bn1!
             }
-            
-            
             return truncateAndPad(bn: bn)
         case "uint","uint8","uint16","uint32","uint64","uint128","uint256": // Tested and working
             let bn = BigNumber(decimalString: value)!

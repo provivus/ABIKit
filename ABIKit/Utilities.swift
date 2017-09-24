@@ -44,11 +44,8 @@ func truncateAndPad(bn: BigNumber) -> String {
     return (truncated?.leftPad(toWidth: 64))!.lowercased()
 }
 
-
-
 let defaultPaddingString = "0"
 let defaultPaddingByte = 0 as UInt8
-
 
 public extension String {
     
@@ -56,7 +53,7 @@ public extension String {
         // Split by 64 byte words, remove the 0x
         let startIndex = self.index(self.startIndex, offsetBy: 2)
         let endIndex = self.endIndex
-        let words = self[startIndex..<endIndex].split(64)
+        let words = String(self[startIndex..<endIndex]).split(64)
         
         var strings = [String]()
         for word in words {
@@ -146,7 +143,7 @@ public extension String {
         return stride(from: 0, to: self.characters.count, by: count).map { i -> String in
             let startIndex = self.index(self.startIndex, offsetBy: i)
             let endIndex   = self.index(startIndex, offsetBy: count, limitedBy: self.endIndex) ?? self.endIndex
-            return self[startIndex..<endIndex]
+            return String(self[startIndex..<endIndex])
         }
     }
     
@@ -165,7 +162,6 @@ public extension String {
         return data
     }
 }
-
 
 extension Data {
     func hexEncodedString() -> String {
