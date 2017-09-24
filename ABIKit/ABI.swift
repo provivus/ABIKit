@@ -92,7 +92,6 @@ struct ABI {
             
             let rightPadded = hexString.rightPad()
             let paddedLen = 64 + rightPadded.lengthOfBytes(using: .utf8)
-            
             let p = BigNumber(integer: paddedLen/2) //
             
             /*
@@ -100,6 +99,8 @@ struct ABI {
              
              enc(X) = enc(k) pad_right(X), i.e. the number of bytes is encoded as a uint256 followed by the actual value of X as a byte sequence, followed by the minimum number of zero-bytes such that len(enc(X)) is a multiple of 32.*/
             
+            
+             print("bytes ", value, truncateAndPad(bn: p!) +  truncateAndPad(bn: bn!) + hexString.rightPad())
              return truncateAndPad(bn: p!) +  truncateAndPad(bn: bn!) + hexString.rightPad()
  
         case "bytes32":
