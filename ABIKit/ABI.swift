@@ -77,14 +77,23 @@ struct ABI {
             return truncateAndPad(bn: p!) + truncateAndPad(bn: bn!) + hexString.rightPad()
         case "bytes":
             
-            return value
-            /*
+            
             let hexString = value.deHexPrefix()
             let len = hexString.lengthOfBytes(using: .utf8)
             
+            print("lengthOfBytes ",len)
+            /*
+             if len = 200
+             160 100
+             0x00000000000000000000000000000000000000000000000000000000000000a0 0000000000000000000000000000000000000000000000000000000000000064
+ 
+             */
+            let bn = BigNumber(integer: len/2) // 100
             
-            let bn = BigNumber(integer: len/2)
-            let p = BigNumber(integer: 32)
+            let rightPadded = hexString.rightPad()
+            let paddedLen = 64 + rightPadded.lengthOfBytes(using: .utf8)
+            
+            let p = BigNumber(integer: paddedLen/2) //
             
             /*
              bytes, of length k (which is assumed to be of type uint256):
@@ -92,7 +101,7 @@ struct ABI {
              enc(X) = enc(k) pad_right(X), i.e. the number of bytes is encoded as a uint256 followed by the actual value of X as a byte sequence, followed by the minimum number of zero-bytes such that len(enc(X)) is a multiple of 32.*/
             
              return truncateAndPad(bn: p!) +  truncateAndPad(bn: bn!) + hexString.rightPad()
- */
+ 
         case "bytes32":
             
             let str = value.deHexPrefix()
