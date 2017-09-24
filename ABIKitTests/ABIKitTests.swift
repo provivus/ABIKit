@@ -136,6 +136,13 @@ class ABIKitTests: XCTestCase {
         let b = "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
         XCTAssertEqual(a,b)
     }
+    
+    func testMegaBytes() {
+        let a = abi.rawEncode([ "bytes" ], [ "0xd79d8e6c75506f727450726f66696c654950465331323230000000000000000000000000000000000000000000000000447ea5c36e883acec07e63058d92258ff7bbceb24344ae2805b2a53a6aefc43d76fae8119dd1e80e882aae4137bd2fbdb40b2c00" ])
+        
+        let b  = "0xd79d8e6c75506f727450726f66696c654950465331323230000000000000000000000000000000000000000000000000447ea5c36e883acec07e63058d92258ff7bbceb24344ae2805b2a53a6aefc43d76fae8119dd1e80e882aae4137bd2fbdb40b2c00"
+        XCTAssertEqual(a,b)
+    }
 
     func testUint256() {
         
