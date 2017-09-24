@@ -77,7 +77,6 @@ struct ABI {
             return truncateAndPad(bn: p!) + truncateAndPad(bn: bn!) + hexString.rightPad()
         case "bytes":
             
-            
             let hexString = value.deHexPrefix()
             let len = hexString.lengthOfBytes(using: .utf8)
             
